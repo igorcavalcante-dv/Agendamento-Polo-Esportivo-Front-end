@@ -1,0 +1,183 @@
+.agendamento-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.agendamento-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 550px;
+}
+
+.agendamento-header h2 {
+  margin: 0 0 8px 0;
+  color: #1e293b;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.agendamento-header p {
+  margin: 0 0 32px 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.secao-form {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.secao-form h3 {
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 14px 0;
+}
+
+.grid-duplo {
+  display: flex;
+  gap: 16px;
+}
+
+.grid-duplo .input-group {
+  flex: 1;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.input-group input:focus, .input-group select:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.equipamentos-lista, .pagamento-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-item, .radio-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  transition: background 0.2s;
+}
+
+.checkbox-item:hover, .radio-item:hover {
+  background: #f1f5f9;
+}
+
+.checkbox-texto {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 500;
+  color: #334155;
+}
+
+.checkbox-texto small {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.radio-item span {
+  font-weight: 500;
+  color: #334155;
+}
+
+.resumo-valores {
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.linha-resumo {
+  display: flex;
+  justify-content: space-between;
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  color: #0f172a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-top: 2px dashed #cbd5e1;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.btn-submit {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.btn-submit:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.agendamento-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-link {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

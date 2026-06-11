@@ -1,0 +1,28 @@
+.footer-esportivo {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid #1e293b;
+  font-family: system-ui, -apple-system, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-container p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-sub {
+  font-size: 0.8rem !important;
+  color: #64748b;
+  margin-top: 6px !important;
+}

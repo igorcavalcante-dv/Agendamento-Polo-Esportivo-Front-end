@@ -1,0 +1,61 @@
+<div class="container mt-5">
+
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h1 class="fw-bold text-primary">Agendamento Polo Esportivo</h1>
+      <p class="text-muted fs-5">Fácil, rápido e online.</p>
+  </div>
+</div>
+
+  <div class="row justify-content-center m-5">
+    <div class="col-md-6">
+      <div class="card shadow-sm p-4 border-0 bg-light">
+        <label for="localSelect" class="form-label fw-bold fs-5 text-secondary">
+         1. Selecione o local (Polo)
+        </label>
+
+        <select #localSelect id="localSelect" class="form-select form-select-lg" (change)="onSelecionarLocal(+localSelect.value)">
+          <option value="" selected disabled>Escolha onde quer jogar</option>
+
+          @for (polo of polos; track polo.id) {
+            <option [value]="polo.id">{{ polo.nome }}</option>
+          }
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5 text-muted opacity-25">
+  @if(localSelecionado !== null){
+    <div class="row fade-in">
+      <div class="col-12 text-center mb-4">
+        <h2 class="fw-bold text-dark">2. Escolha a modalidade esportiva</h2>
+        <p class="text-muted">Esportes disponíveis no momento para o <strong>{{nomeLocalSelecionado}}</strong></p>
+      </div>
+
+      <div class="row justify-content-center">
+
+        @for(esporte of modalidadesFiltradas; track esporte.nome){
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0 bg-white">
+              <div class="card-body text-center d-flex flex-column p-4">
+
+                <h5 class="card-title fw-bold text-primary mb-3">{{esporte.nome}}</h5>
+                <p class="card-text text-muted flex-grow-1">{{esporte.descricao}}</p>
+
+                <button (click)="iniciarAgendamento(esporte.nome)" class="btn btn-primary w-100 mt-4 fw-bold p-2 shadow-sm">
+                  Agendar agora
+                </button>
+
+              </div>
+            </div>
+          </div>
+        } @empty {
+          <div class="col-12 text-center text-muted">
+            <p>Nenhuma modalidade disponível para este local no momento</p>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

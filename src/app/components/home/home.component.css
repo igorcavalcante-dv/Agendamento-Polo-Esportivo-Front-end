@@ -1,0 +1,159 @@
+.home-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-header h1 {
+  color: #0f172a;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.home-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.features-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.busca-section {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.busca-section h2 {
+  color: #0f172a;
+  font-size: 1.5rem;
+  margin: 0 0 20px 0;
+}
+
+.input-group-home {
+  text-align: left;
+}
+
+.input-group-home label {
+  display: block;
+  margin-bottom: 8px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-group-home select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.esportes-section {
+  margin-top: 30px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.esportes-section h3 {
+  color: #0f172a;
+  font-size: 1.6rem;
+  margin: 0 0 4px 0;
+}
+
+.esportes-section h3 span {
+  color: #2563eb;
+}
+
+.info-banco {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0 0 24px 0;
+}
+
+.grid-esportes {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.card-esporte {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.esporte-icone {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.card-esporte h4 {
+  color: #0f172a;
+  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+}
+
+.card-esporte p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+.esporte-preco {
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.btn-agendar {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-agendar:hover {
+  background: #1d4ed8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

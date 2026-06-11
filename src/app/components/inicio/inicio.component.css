@@ -1,0 +1,93 @@
+.welcome-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(123deg, #0f172a 0%, #1e293b 100%);
+  font-family: system-ui, -aplle-system, BlinkMacSystemFont, 'Segoe UI', Boboto, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.welcome-card{
+  background: #ffffff ;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.brand-icon{
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.logo-area h1{
+  font-size: 2.2rem;
+  color: #1e293b;
+  margin: 0 0 5px 0;
+  font-weight: 800;
+}
+
+.logo-area p{
+  color: #64748b;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.divider{
+  border: 0;
+  height: 1px;
+  background: #e2e8f0;
+  margin: 30px 0;
+}
+
+.actions-group{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn{
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-login{
+  background-color: #2563eb;
+  color: #ffffff
+}
+
+.btn-login:hover{
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-register{
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.btn-register:hover{
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+.btn-guest{
+  background-color: transparent;
+  color: #64748b;
+  font-size: 0.95rem;
+  padding: 8px;
+}
+
+.btn-guest:hover{
+  color: #1e293b;
+  text-decoration: underline;
+}

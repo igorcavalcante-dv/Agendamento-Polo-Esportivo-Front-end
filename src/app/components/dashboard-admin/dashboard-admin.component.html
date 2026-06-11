@@ -1,0 +1,47 @@
+<div class="admin-layout">
+  <nav class="sidebar">
+    <h2>Gestão da Arena</h2>
+    <button (click)="view = 'cadastro'" [class.active]="view === 'cadastro'">Configurar Espaço</button>
+    <button (click)="view = 'agenda'" [class.active]="view === 'agenda'">Agenda de Clientes</button>
+  </nav>
+
+  <main class="content">
+    <section *ngIf="view === 'cadastro'">
+      <h3>Configurar Espaço e Valores</h3>
+      <div class="form-container">
+        <label>Nome do Espaço:</label>
+        <input type="text" [(ngModel)]="espaco.nome" placeholder="Ex: Quadra 01">
+
+        <label>Modalidades:</label>
+        <input type="text" [(ngModel)]="espaco.modalidades" placeholder="Ex: Futsal, Vôlei">
+
+        <label>Valor (R$ por hora):</label>
+        <input type="number" [(ngModel)]="espaco.valor" placeholder="0.00">
+
+        <button class="btn-save" (click)="salvar()">Salvar Configurações</button>
+      </div>
+    </section>
+
+    <section *ngIf="view === 'agenda'">
+      <h3>Agendamentos Confirmados</h3>
+      <table class="data-table">
+        <thead>
+        <tr>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Cliente</th>
+          <th>Valor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of agendamentos">
+          <td>{{ item.data }}</td>
+          <td>{{ item.horario }}</td>
+          <td>{{ item.cliente }}</td>
+          <td>R$ {{ item.valor }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
