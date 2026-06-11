@@ -4,10 +4,12 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginAdminComponent } from './components/LoginAdmin/login-admin.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import {CadastroComponent} from './components/Cadrastro/cadastro.component';
+import {AgendamentoComponent} from './components/agendamento/agendamento.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'agendamento', component: AgendamentoComponent },
   { path: 'login-admin', component: LoginAdminComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'home', component: HomeComponent },

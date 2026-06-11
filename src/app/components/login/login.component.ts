@@ -38,9 +38,8 @@ export class LoginComponent {
 
   fazerLogin() {
     if (this.usuario.email && this.usuario.senha) {
-      this.router.navigate(['/home']); // Só navega se preencher
-    } else {
-      alert('Preencha email e senha!');
+      localStorage.setItem('usuarioLogado', 'true');
+      this.router.navigate(['/home']);
     }
   }
 
