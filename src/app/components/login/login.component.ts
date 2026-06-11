@@ -1,59 +1,51 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [FormsModule],
   template: `
-    <div class="login-container">
-      <div class="login-card">
-        <div class="login-header">
-          <h2>Acessar Conta</h2>
-          <p>Insira suas credenciais para acessar o Polo Esportivo</p>
-        </div>
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Login Cliente</h1>
+        <input [(ngModel)]="usuario.email" placeholder="Email" class="input-field">
+        <input [(ngModel)]="usuario.senha" type="password" placeholder="Senha" class="input-field">
 
-        <div *ngIf="erroMensagem" class="alert-error">
-          {{ erroMensagem }}
-        </div>
+        <button class="btn btn-primary" (click)="fazerLogin()">Entrar</button>
 
-        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-          <div class="input-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" [(ngModel)]="dadosLogin.email" required placeholder="seu@email.com">
-          </div>
-
-          <div class="input-group">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" [(ngModel)]="dadosLogin.senha" required placeholder="Sua senha">
-          </div>
-
-          <button type="submit" class="btn-submit" [disabled]="!loginForm.form.valid">Entrar</button>
-        </form>
-
-        <div class="login-info-badge">
-          <span>Acesso único para Clientes e Empresas</span>
-        </div>
-
-        <div class="login-footer">
-          <p>Não tem uma conta? <a routerLink="/cadastro">Cadastre-se</a></p>
-          <a routerLink="/" class="back-link">← Voltar ao início</a>
+        <div class="footer-links">
+          <button class="btn-link" (click)="irPara('admin')">Acesso Administrador</button>
+          <button class="btn-link" (click)="irPara('cadastro')">Cadastrar-se</button>
         </div>
       </div>
     </div>
   `,
-  styleUrls: ['./login.component.css']
+  styles: [`
+    .auth-container { display: flex; align-items: center; justify-content: center; height: 100vh; background: #f0f2f5; }
+    .auth-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 300px; }
+    .input-field { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    .btn { width: 100%; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-link { background: none; border: none; color: #64748b; cursor: pointer; text-decoration: underline; display: block; width: 100%; margin-top: 10px; }
+  `]
 })
 export class LoginComponent {
-  dadosLogin = {email: '', senha: ''};
-  erroMensagem: string = '';
+  usuario = { email: '', senha: '' };
 
-  constructor(private router: Router) {
+  constructor(private router: Router) {}
+
+  fazerLogin() {
+    if (this.usuario.email && this.usuario.senha) {
+      this.router.navigate(['/home']); // Só navega se preencher
+    } else {
+      alert('Preencha email e senha!');
+    }
   }
 
-  onSubmit() {
-    this.router.navigate(['/home']);
+  irPara(rota: string) {
+    if (rota === 'admin') this.router.navigate(['/login-admin']);
+    else this.router.navigate(['/cadastro']);
   }
 }

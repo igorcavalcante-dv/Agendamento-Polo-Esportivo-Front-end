@@ -1,38 +1,30 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-admin',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   template: `
-    <div class="login-container">
-      <div class="login-card">
-        <h2>Acesso Administrativo</h2>
-        <form (ngSubmit)="onAdminSubmit()">
-          <div class="input-group">
-            <label>Usuário Admin</label>
-            <input type="text" [(ngModel)]="admin.user" name="user" required>
-          </div>
-          <div class="input-group">
-            <label>Senha</label>
-            <input type="password" [(ngModel)]="admin.pass" name="pass" required>
-          </div>
-          <button type="submit" class="btn-submit">Entrar no Painel</button>
-        </form>
-        <p><a href="/login">Voltar para Login de Cliente</a></p>
+    <div class="admin-container">
+      <div class="admin-card">
+        <h2>Acesso Admin</h2>
+        <input [(ngModel)]="admin.user" placeholder="Usuário" class="input-field">
+        <input [(ngModel)]="admin.pass" type="password" placeholder="Senha" class="input-field">
+        <button class="btn-admin" (click)="logar()">Acessar Painel</button>
       </div>
     </div>
   `,
-  styleUrls: ['./login-admin.component.css']
+  styles: [`
+    .admin-container { display: flex; align-items: center; justify-content: center; height: 100vh; background: #1e293b; }
+    .admin-card { background: white; padding: 40px; border-radius: 12px; width: 300px; text-align: center; }
+    .input-field { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    .btn-admin { width: 100%; padding: 10px; background: #0f172a; color: white; border: none; border-radius: 4px; cursor: pointer; }
+  `]
 })
 export class LoginAdminComponent {
   admin = { user: '', pass: '' };
   constructor(private router: Router) {}
-
-  onAdminSubmit() {
-    this.router.navigate(['/dashboard-admin']);
-  }
+  logar() { this.router.navigate(['/dashboard-admin']); }
 }
